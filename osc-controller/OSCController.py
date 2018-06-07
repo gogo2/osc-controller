@@ -1,7 +1,7 @@
 class OSCController:
 
-    def __init__(self, client, window):
+    def __init__(self, client, interface):
         self.client = client
-        self.window = window
+        self.interface = interface
 
-        self.window.tk_root.mainloop()
+        self.interface.loop()
