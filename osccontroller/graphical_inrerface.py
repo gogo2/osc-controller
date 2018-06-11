@@ -7,6 +7,7 @@ class GraphicalInterface:
         self.tk_root = tk.Tk()
         self.tk_root.title(title)
         self.tk_root.geometry("%dX%d" % (width, height))
+        self.sender = None
 
     def loop(self):
         self.tk_root.mainloop()
