@@ -1,4 +1,11 @@
 from collections import namedtuple
 
-ButtonOptions = namedtuple('ButtonOptions', ['text', 'osc_content', 'command', 'width', 'height', 'color', 'bg', 'fg'])
-ButtonOptions.__new__.__defaults__ = (None, None, None, None, None, None, None)
+ButtonOptions = namedtuple('ButtonOptions', ['activebackground', 'activeforeground', 'anchor',
+                                             'background', 'bitmap', 'borderwidth', 'cursor',
+                                             'disabledforeground', 'font', 'foreground',
+                                             'highlightbackground', 'highlightcolor',
+                                             'highlightthickness', 'image', 'justify',
+                                             'padx', 'pady', 'relief', 'repeatdelay',
+                                             'repeatinterval', 'takefocus', 'text',
+                                             'textvariable', 'underline', 'wraplength'])
+ButtonOptions.__new__.__defaults__ = (None,) * len(ButtonOptions._fields)
