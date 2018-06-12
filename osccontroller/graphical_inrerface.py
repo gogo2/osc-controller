@@ -15,8 +15,8 @@ class GraphicalInterface:
     def loop(self):
         self.tk_root.mainloop()
 
-    def add_button(self, x: int, y: int, text: str, options: ButtonOptions = ButtonOptions(), osc_content=None,
-                   command=None):
+    def add_button(self, x: int, y: int, text: str, options: ButtonOptions = ButtonOptions(),
+                   osc_content=None, command=None):
         options_dict = {}
         for arg, val in options._asdict().items():
             if val is not None:
