@@ -1,12 +1,11 @@
 import tkinter as tk
 
 from osccontroller.option_containers import ButtonOptions
-from osccontroller.osc_client import OSCClient
 
 
 class GraphicalInterface:
 
-    def __init__(self, width: int, height: int, client: OSCClient, title: str = "OSCController"):
+    def __init__(self, width: int, height: int, client, title: str = "OSCController"):
         self.tk_root = tk.Tk()
         self.tk_root.title(title)
         self.tk_root.geometry("%dX%d" % (width, height))

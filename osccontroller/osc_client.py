@@ -1,7 +1,7 @@
 from pythonosc.udp_client import UDPClient
 
 
-class OSCClient:
+class OscUdpClient:
     def __init__(self, ip, port, allow_broadcast=False):
         self._udp_client = UDPClient(ip, port, allow_broadcast)
 
