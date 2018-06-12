@@ -17,10 +17,7 @@ class GraphicalInterface:
 
     def add_button(self, x: int, y: int, text: str, options: ButtonOptions = ButtonOptions(),
                    osc_content=None, command=None):
-        options_dict = {}
-        for arg, val in options._asdict().items():
-            if val is not None:
-                options_dict[arg] = val
+        options_dict = {arg: val for arg, val in options._asdict().items() if val is not None}
         if osc_content is not None:
             self.elements.append(tk.Button(self.tk_root,
                                            text=text,
