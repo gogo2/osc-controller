@@ -24,7 +24,7 @@ class GraphicalInterface:
                                            command=lambda content=osc_content: self.client.send(content),
                                            cnf=options_dict))
         elif command is not None:
-            self.elements.append(tk.Button(self.tk_root, text=options.text, command=command, cnf=options_dict))
+            self.elements.append(tk.Button(self.tk_root, text=text, command=command, cnf=options_dict))
         else:
             raise Exception()
         self.elements[-1].place(x=x, y=y)
