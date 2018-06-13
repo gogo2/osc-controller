@@ -15,6 +15,8 @@ def osc_message(address, args=()):
 
 def osc_bundle(contents):
     builder = osc_bundle_builder.OscBundleBuilder(osc_bundle_builder.IMMEDIATELY)
+    if not isinstance(contents, Iterable):
+        contents = [contents]
     for content in contents:
         builder.add_content(content)
     return builder.build()
