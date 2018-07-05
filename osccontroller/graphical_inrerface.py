@@ -1,6 +1,6 @@
 import tkinter as tk
 
-from osccontroller.helpers import osc_message
+from osccontroller.helpers import osc_message, num_val
 from osccontroller.option_containers import ButtonOptions, ScaleOptions
 
 
@@ -35,15 +35,16 @@ class GraphicalInterface:
             raise Exception()
         self.elements[-1].place(x=x, y=y)
 
-    def add_scale(self, x: int, y: int, text: str, min_val, max_val, options: ScaleOptions = ScaleOptions(),
+    def add_scale(self, x: int, y: int, label: str, init_val, min_val, max_val, options: ScaleOptions = ScaleOptions(),
                   address: str = None, command=None):
         options_dict = {arg: val for arg, val in options._asdict().items() if val is not None}
         if address is not None:
-            self.elements.append(tk.Scale(self.tk_root, text=text, from_=min_val, to=max_val, cnf=options_dict,
-                                          command=lambda value: self.client.send(osc_message(address, [value]))))
+            self.elements.append(tk.Scale(self.tk_root, label=label, from_=min_val, to=max_val, cnf=options_dict,
+                                          command=lambda val: self.client.send(osc_message(address, [num_val(val)]))))
         elif command is not None:
             self.elements.append(
-                tk.Button(self.tk_root, text=text, from_=min_val, to=max_val, command=command, cnf=options_dict))
+                tk.Button(self.tk_root, label=label, from_=min_val, to=max_val, command=command, cnf=options_dict))
         else:
             raise Exception()
+        self.elements[-1].set(init_val)
         self.elements[-1].place(x=x, y=y)

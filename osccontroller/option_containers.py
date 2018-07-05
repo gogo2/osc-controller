@@ -11,8 +11,8 @@ ButtonOptions.__new__.__defaults__ = (None,) * len(ButtonOptions._fields)
 ScaleOptions = namedtuple('ScaleOptions',
                           ['activebackground', 'background', 'bigincrement', 'bd', 'bg', 'borderwidth', 'cursor',
                            'digits', 'fg', 'font', 'foreground', 'highlightbackground', 'highlightcolor',
-                           'highlightthickness', 'label', 'length', 'orient', 'relief', 'repeatdelay', 'repeatinterval',
+                           'highlightthickness', 'length', 'orient', 'relief', 'repeatdelay', 'repeatinterval',
                            'resolution', 'showvalue', 'sliderlength', 'sliderrelief', 'state', 'takefocus',
                            'tickinterval', 'troughcolor', 'variable', 'width'])
 
-ButtonOptions.__new__.__defaults__ = (None,) * len(ScaleOptions._fields)
+ScaleOptions.__new__.__defaults__ = (None,) * len(ScaleOptions._fields)
