@@ -5,7 +5,7 @@ with open("README.md", "r") as rdme:
 
 setuptools.setup(
     name="osc-controller",
-    version="0.1",
+    version="0.2",
     author="Bartosz Sobol",
     author_email="bartoszmsobol@gmail.com",
     description="Simple library for creating osc software in python",

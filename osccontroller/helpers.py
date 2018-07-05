@@ -20,3 +20,8 @@ def osc_bundle(contents):
     for content in contents:
         builder.add_content(content)
     return builder.build()
+
+
+def is_3_7():
+    import sys
+    return sys.version_info[1] >= 7
