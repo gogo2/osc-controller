@@ -1,7 +1,7 @@
-from osccontroller.graphical_inrerface import GraphicalInterface
 from osccontroller.helpers import osc_message, osc_bundle
 from osccontroller.option_containers import ButtonOptions
 from osccontroller.osc_client import OscUdpClient
+from osccontroller.simple_graphical_inrerface import SimpleGraphicalInterface
 
 CURR = 0
 LAST = 10
@@ -9,7 +9,7 @@ LAST = 10
 
 def main():
     client = OscUdpClient("10.0.0.188", 8000)
-    interface = GraphicalInterface(640, 300, client, "3D meetup #7")
+    interface = SimpleGraphicalInterface(640, 300, client, "3D meetup #7")
     select_msg = osc_message("/Prez")
 
     def prev_slide():
