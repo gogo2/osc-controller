@@ -8,7 +8,7 @@ setuptools.setup(
     version="0.3.0",
     author="Bartosz Sobol",
     author_email="bartoszmsobol@gmail.com",
-    description="Simple library for creating osc software in python",
+    description="Simple wrapper library over python-osc library and tkinter for creating osc software in python.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/gogo2/osc-controller",
